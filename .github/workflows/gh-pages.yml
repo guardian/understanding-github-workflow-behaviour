@@ -101,7 +101,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to publish."
           else
-            git commit -m "Deploy ${GITHUB_REF_NAME} to Pages"
+            git commit -m "Deploy ${{ steps.facts.outputs.branchName }} to Pages"
             git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
           fi
 
