@@ -55,6 +55,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           path: src-repo
+          ref: ${{ steps.facts.outputs.branchName }}
 
       # Checkout the gh-pages branch (which powers https://guardian.github.io/understanding-github-workflow-events/)
       - name: Checkout gh-pages
