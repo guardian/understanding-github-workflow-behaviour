@@ -1,9 +1,8 @@
-# Understanding GitHub Workflow Events
+# Understanding GitHub Workflow Behaviour
 
 A minimal repository to understand GitHub Workflow behaviour.
-In particular GitHub SHA values.
 
-See also https://github.com/orgs/community/discussions/26325.
+For example, GitHub SHA values. See also https://github.com/orgs/community/discussions/26325.
 
 ## How to use
 1. Raise a PR to `main` (PR A) to make a small change to the app. For example update the `H1` in [index.html](./src/index.html). Do not merge this PR.
@@ -12,7 +11,7 @@ See also https://github.com/orgs/community/discussions/26325.
 4. Merge PR B to `main`.
 5. Add a new commit to PR A. Do not rebase against `main`.
 6. Preview the deployed site for PR A in the browser again and observe the changes from PR B being included (even though they're not in the revision history for the branch 😱).
-7. Manually trigger the [gh-pages.yml](.github/workflows/gh-pages.yml) and observe the changes from PR B are not included in the deployed site for PR A 😵‍💫.
+7. Manually trigger the [gh-pages.yml](.github/workflows/gh-pages.yml) workflow and observe the changes from PR B are not included in the deployed site for PR A 😵‍💫.
 
 ## Well that's strange behaviour? How can I fix this?
 In your build when checking out the code with `actions/checkout`, set `ref` to the name of your branch.

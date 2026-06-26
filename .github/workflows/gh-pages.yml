@@ -1,7 +1,7 @@
-# This workflow updates the `gh-pages` branch which powers the GitHub Pages site https://guardian.github.io/understanding-github-workflow-events/.
+# This workflow updates the `gh-pages` branch which powers the GitHub Pages site https://guardian.github.io/understanding-github-workflow-behaviour/.
 # It creates a new directory in the `gh-pages` branch for each branch, and copies the contents of `src/` into that directory.
-# This results in a preview of the branch being available at https://guardian.github.io/understanding-github-workflow-events/<branch-name>.
-# NOTE: The site will only be available once https://github.com/guardian/understanding-github-workflow-events/actions/workflows/pages/pages-build-deployment has completed.
+# This results in a preview of the branch being available at https://guardian.github.io/understanding-github-workflow-behaviour/<branch-name>.
+# NOTE: The site will only be available once https://github.com/guardian/understanding-github-workflow-behaviour/actions/workflows/pages/pages-build-deployment has completed.
 
 name: Deploy to GitHub Pages
 
@@ -56,7 +56,7 @@ jobs:
         with:
           path: src-repo
 
-      # Checkout the gh-pages branch (which powers https://guardian.github.io/understanding-github-workflow-events/)
+      # Checkout the gh-pages branch (which powers https://guardian.github.io/understanding-github-workflow-behaviour/)
       - name: Checkout gh-pages
         uses: actions/checkout@v6
         with:
@@ -129,7 +129,7 @@ jobs:
             const body = [
               marker,
               `🚀 View this branch here - ${branchUrl}`,
-              'NOTE: Requires the [pages-build-deployment](https://github.com/guardian/understanding-github-workflow-events/actions/workflows/pages/pages-build-deployment) action to have completed'
+              'NOTE: Requires the [pages-build-deployment](https://github.com/guardian/understanding-github-workflow-behaviour/actions/workflows/pages/pages-build-deployment) action to have completed'
             ].join('\n');
 
             const { data: comments } = await github.rest.issues.listComments({
