@@ -14,6 +14,10 @@ See also https://github.com/orgs/community/discussions/26325.
 6. Preview the deployed site for PR A in the browser again and observe the changes from PR B being included (even though they're not in the revision history for the branch 😱).
 7. Manually trigger the [gh-pages.yml](.github/workflows/gh-pages.yml) and observe the changes from PR B are not included in the deployed site for PR A 😵‍💫.
 
+## Well that's strange behaviour? How can I fix this?
+In your build when checking out the code with `actions/checkout`, set `ref` to the name of your branch.
+Now the build artifact will be created exactly from your branch. Nothing more. Nothing less.
+
 ## Running locally
 Start a web server to serve the [`src`](./src) directory:
 
