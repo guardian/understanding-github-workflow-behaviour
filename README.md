@@ -28,6 +28,7 @@ To reset the contents of the `gh-pages` branch (i.e. delete all feature branch d
 
 ```bash
 git checkout gh-pages
+git pull
 for dir in */; do [ "${dir%/}" != "main" ] && git rm -rf "$dir"; done
 git commit -m 'fix: Reset content of gh-pages branch'
 git push
