@@ -1,8 +1,7 @@
 # Understanding GitHub Workflow Behaviour
 
-A minimal repository to understand GitHub Workflow behaviour.
-
-For example, GitHub SHA values. See also https://github.com/orgs/community/discussions/26325.
+A minimal repository to understand GitHub Workflow behaviour when trigggered by [`pull_request`](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#pull_request).
+See also https://github.com/orgs/community/discussions/26325.
 
 ## How to use
 1. Raise a PR to `main` (PR A) to make a small change to the app. For example update the `H1` in [index.html](./src/index.html). Do not merge this PR.
@@ -14,8 +13,12 @@ For example, GitHub SHA values. See also https://github.com/orgs/community/discu
 7. Manually trigger the [gh-pages.yml](.github/workflows/gh-pages.yml) workflow and observe the changes from PR B are not included in the deployed site for PR A 😵‍💫.
 
 ## Well that's strange behaviour? How can I fix this?
+### Set `ref` to the name of your branch
 In your build when checking out the code with `actions/checkout`, set `ref` to the name of your branch.
 Now the build artifact will be created exactly from your branch. Nothing more. Nothing less.
+
+### Use a different trigger
+Switch to a [`push` trigger](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#pull_request), which does not have this "merged with main" behaviour.
 
 ## Running locally
 Start a web server to serve the [`src`](./src) directory:
