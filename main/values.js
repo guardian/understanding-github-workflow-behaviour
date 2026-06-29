@@ -1,6 +1,6 @@
   export const GitHubValues = {
-    "githubCommitSha": "2ffbd71d8dafa083d1a526f743751ca894f644fe",
-    "userCommitSha": "2ffbd71d8dafa083d1a526f743751ca894f644fe",
-    "buildNumber": "51",
+    "githubCommitSha": "393ddc133a75131918b4775304e66970b077234d",
+    "userCommitSha": "393ddc133a75131918b4775304e66970b077234d",
+    "buildNumber": "52",
     "branchName": "main"
   };
